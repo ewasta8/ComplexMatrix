@@ -89,7 +89,7 @@ procedure TFormMain.UpdateVisibility;
 begin
   if RBtnDataTypeStd.Checked then
   begin
-    LblA.Caption := 'Podaj wartoúÊ a[i,j]';
+    LblA.Caption := 'Podaj warto≈õƒá a[i,j]';
     EditAre.Visible := True;
     EditAim.Visible := True;
     EditAAre.Visible := False;
@@ -99,7 +99,7 @@ begin
   end
   else
   begin
-    LblA.Caption := 'Podaj wartoúÊ koÒcÛw przedzia≥u a[i,j].a a[i,j].b';
+    LblA.Caption := 'Podaj warto≈õƒá ko≈Ñc√≥w przedzia≈Çu a[i,j].a a[i,j].b';
     EditAre.Visible := False;
     EditAim.Visible := False;
     EditAAre.Visible := True;
@@ -121,7 +121,7 @@ begin
   end;
   if not TryStrToInt(Trim(Edit.Text), Value) or (Value <= 0) then
   begin
-    ShowMessage('Wpisz liczbÍ ca≥kowitπ wiÍkszπ od zera w polu "' + Edit.Name + '".');
+    ShowMessage('Wpisz liczbƒô ca≈ÇkowitƒÖ wiƒôkszƒÖ od zera w polu "' + Edit.Name + '".');
     Edit.SetFocus;
   end;
 end;
@@ -146,7 +146,7 @@ begin
   if TryStrToFloat(TextVal, Value, fs) then
     Result := True
   else begin
-    ShowMessage('B≥Ídny format liczby zmiennoprzecinkowej w polu "' + Edit.Name + '".');
+    ShowMessage('B≈Çƒôdny format liczby zmiennoprzecinkowej w polu "' + Edit.Name + '".');
     Edit.SetFocus;
   end;
 end;
@@ -155,7 +155,7 @@ procedure TFormMain.BtnSetSizeClick(Sender: TObject);
 begin
   if not TryStrToInt(Trim(EditN.Text), n) or (n <= 0) then
   begin
-    ShowMessage('Liczba niewiadomych musi byÊ wiÍksza od zera');
+    ShowMessage('Liczba niewiadomych musi byƒá wiƒôksza od zera');
     Exit;
   end;
   i := 0;
@@ -234,7 +234,7 @@ begin
       end
       else
       begin
-        LblA.Caption := 'Macierz zosta≥a wype≥niona';
+        LblA.Caption := 'Macierz zosta≈Ça wype≈Çniona';
 		    EditAre.Enabled := False;
         EditAim.Enabled := False;
         BtnEnter.Enabled := False;
@@ -276,7 +276,7 @@ begin
 
     if (reA > reB) or (imA > imB) then
     begin
-      ShowMessage('Prawy koniec przedzia≥u jest mniejszy niø lewy koniec przedzia≥u');
+      ShowMessage('Prawy koniec przedzia≈Çu jest mniejszy ni≈º lewy koniec przedzia≈Çu');
       Exit;
     end;
 
@@ -308,7 +308,8 @@ begin
       end
     else
 	  begin
-        LblA.Caption := 'Macierz zosta≥a wype≥niona';
+        LblA.Caption := 'Macierz zosta≈Ça wype≈Çniona';
+        EditAre.Enabled := False; EditAim.Enabled := False;
         EditAAre.Enabled := False;
         EditAAim.Enabled := False;
         EditABre.Enabled := False;
@@ -396,7 +397,7 @@ begin
       if st = 0 then
         resultText := ComplexMatrixToStr(x)
       else
-        resultText := 'Uk≥ad jest osobliwy (st=' + IntToStr(st) + ')';
+        resultText := 'Uk≈Çad jest osobliwy (st=' + IntToStr(st) + ')';
     end
     else
     begin
@@ -405,14 +406,14 @@ begin
       if st = 0 then
         resultText := iComplexMatrixToStr(xi)
       else
-        resultText := 'Uk≥ad jest osobliwy (st=' + IntToStr(st) + ')';
+        resultText := 'Uk≈Çad jest osobliwy (st=' + IntToStr(st) + ')';
     end;
 
     MemoAnswer.Lines.Text := resultText;
     BtnSolve.Enabled := False;
   except
     on E: Exception do
-      ShowMessage('B≥πd podczas rozwiπzywania: ' + E.Message);
+      ShowMessage('B≈ÇƒÖd podczas rozwiƒÖzywania: ' + E.Message);
   end;
 end;
 
@@ -432,4 +433,3 @@ begin
 end;
 
 end.
-
